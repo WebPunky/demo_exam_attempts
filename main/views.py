@@ -24,5 +24,5 @@ def create_order(request: HttpRequest) -> HttpResponse:
 
 @login_required
 def list_order(request: HttpRequest) -> HttpResponse:
-    orders = Orders.objects.all()
+    orders = Orders.objects.filter(user=request.user)
     return render(request, "main/list_order.html", {"orders": orders})

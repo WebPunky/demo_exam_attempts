@@ -9,6 +9,8 @@ class Services(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     is_active = models.BooleanField(default=True)
 
+    def __str__(self) -> str:
+        return self.title
 
 class Orders(models.Model):
     class Status(models.TextChoices):
@@ -30,7 +32,6 @@ class Orders(models.Model):
     status = models.CharField(max_length=20, choices=Status, default=Status.NEW)
     created_at = models.DateTimeField(auto_now_add=True)
     scheduledd_at = models.DateTimeField()
-
 
 class Reviews(models.Model):
     order = models.OneToOneField(
