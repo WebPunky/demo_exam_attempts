@@ -13,7 +13,7 @@ def register(request: HttpRequest) -> HttpResponse:
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("hero")
+            return redirect("main:hero")
     form = RegisterForm()
     return render(request, "users/register.html", {"form": form})
 

@@ -4,7 +4,7 @@ from . import views
 
 # from views import hero
 
-APP_NAME = "main"
+app_name = "main"
 
 urlpatterns = [
     path("hero/", views.hero, name="hero"),

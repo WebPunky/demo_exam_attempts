@@ -18,7 +18,7 @@ def create_order(request: HttpRequest) -> HttpResponse:
             order = form.save(commit=False)
             order.user = request.user
             order.save()
-            return redirect("hero")
+            return redirect("main:hero")
     form = CreateOrderForm()
     return render(request, "main/create_order.html", {"form": form})
 

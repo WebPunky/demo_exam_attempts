@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from . import views
 # from views import hero
 
-APP_NAME = "users"
+app_name = "users"
 
 urlpatterns = [
     path("login/", LoginView.as_view(redirect_authenticated_user=True), name="login" ),
