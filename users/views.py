@@ -19,5 +19,4 @@ def register(request: HttpRequest) -> HttpResponse:
 
 @login_required
 def profile(request: HttpRequest) -> HttpResponse:
-    user = User.objects.all()
-    return render(request, "users/profile.html", {"user": user})
+    return render(request, "users/profile.html")
