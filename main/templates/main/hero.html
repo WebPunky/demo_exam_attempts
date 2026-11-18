@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+    Главная
+{% endblock title %}
+    
+
+{% block content %}
+    
+    {% for service in services %}
+        <div>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.desc }}</p>
+            <p>{{ service.price }}</p>
+        </div>
+    {% empty %}
+        <p>Пока нет услуг</p>
+    {% endfor %}
+        
+{% endblock content %}
+    
