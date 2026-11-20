@@ -3,7 +3,7 @@ from django.forms import widgets
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 
-from .models import Orders
+from .models import Orders, Reviews
 
 class CreateOrderForm(forms.ModelForm):
     class Meta:
@@ -17,3 +17,8 @@ class CreateOrderForm(forms.ModelForm):
         if value < timezone.now():
             raise forms.ValidationError("Нельзя выбрать прошедшую дату")
         return value
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Reviews
+        fields = ("rating", "comment")

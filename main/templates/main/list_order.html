@@ -15,6 +15,11 @@
             <p>{{ order.status }}</p>
             <p>{{ order.scheduledd_at }}</p>
         </div>
+        
+        {% if order.status == "done" %}
+            <a href="{% url 'main:create_review' order.id %}">оставить отзыв</a>
+        {% endif %}
+            
     {% empty %}
         <p>Пока пусто</p>
     {% endfor %}
